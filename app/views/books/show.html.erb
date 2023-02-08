@@ -1,3 +1,17 @@
 <h1><%= @book.title %></h1>
 
 <p><%= @book.content %></p>
+
+<br>
+<h3>Author</h3>
+<%= @book.author.first_name %> <%= @book.author.last_name  %>
+
+<h3>Options</h3>
+<ul>
+  <li><%= link_to "Edit", edit_book_path(@book) %></li>
+  <li><%= link_to "Destroy", book_path(@book), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+  <li><%= link_to "Back to overview", root_path %></li>
+</ul>

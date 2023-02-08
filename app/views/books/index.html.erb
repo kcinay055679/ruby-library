@@ -1,6 +1,6 @@
 <h1>Library</h1>
 
-<h3>All Books</h3>
+<h3>All authors</h3>
 <ul>
   <% @books.each do |book| %>
     <li>
@@ -8,3 +8,14 @@
     </li>
   <% end %>
 </ul>
+<%= link_to "New book", new_book_path %>
+
+<h3>All authors</h3>
+<ul>
+  <% @authors.each do |author| %>
+    <li>
+      <%= link_to author.first_name+ " " +author.last_name, author %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New author", new_author_path %>
