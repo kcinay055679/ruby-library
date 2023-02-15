@@ -4,7 +4,7 @@
 
 <br>
 <h3>Author</h3>
-<%= link_to "#{@book.author.first_name} #{@book.author.last_name}", root_path %>
+<%= link_to "#{@book.author.first_name} #{@book.author.last_name}", author_path(@book.author) %>
 
 <h3>Options</h3>
 <ul>
