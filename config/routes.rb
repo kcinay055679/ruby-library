@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  root "books#index"
+  scope '/api' do
+    resources :books
+  end
 
-  resources :authors
-  resources :books
+  scope '/api' do
+    resources :authors
+  end
+
 end

@@ -1381,17 +1381,18 @@
       <Primary>1</Primary>
     </key>
     <column id="500" parent="484" name="id">
-      <AutoIncrement>1</AutoIncrement>
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="501" parent="484" name="title">
       <DasType>varchar|0s</DasType>
+      <DefaultExpression>NULL</DefaultExpression>
       <Position>2</Position>
     </column>
     <column id="502" parent="484" name="content">
       <DasType>varchar|0s</DasType>
+      <DefaultExpression>NULL</DefaultExpression>
       <Position>3</Position>
     </column>
     <column id="503" parent="484" name="created_at">
@@ -1404,49 +1405,62 @@
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <key id="505" parent="484">
+    <column id="505" parent="484" name="author_id">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="506" parent="484" name="fk_rails_53d51ce16a">
+      <ColNames>author_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>authors</RefTableName>
+    </foreign-key>
+    <index id="507" parent="484" name="index_books_on_author_id">
+      <ColNames>author_id</ColNames>
+    </index>
+    <key id="508" parent="484">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="506" parent="485" name="version">
+    <column id="509" parent="485" name="version">
       <DasType>varchar|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="507" parent="485" name="sqlite_autoindex_schema_migrations_1">
+    <index id="510" parent="485" name="sqlite_autoindex_schema_migrations_1">
       <ColNames>version</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="508" parent="485">
+    <key id="511" parent="485">
       <ColNames>version</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_schema_migrations_1</UnderlyingIndexName>
     </key>
-    <column id="509" parent="486" name="type">
+    <column id="512" parent="486" name="type">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="510" parent="486" name="name">
+    <column id="513" parent="486" name="name">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="511" parent="486" name="tbl_name">
+    <column id="514" parent="486" name="tbl_name">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="512" parent="486" name="rootpage">
+    <column id="515" parent="486" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="513" parent="486" name="sql">
+    <column id="516" parent="486" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="514" parent="487" name="name">
+    <column id="517" parent="487" name="name">
       <Position>1</Position>
     </column>
-    <column id="515" parent="487" name="seq">
+    <column id="518" parent="487" name="seq">
       <Position>2</Position>
     </column>
   </database-model>
