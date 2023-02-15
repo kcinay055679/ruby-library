@@ -46,4 +46,11 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :content, :author_id)
   end
+
+  before_action :redirect_cancel, only: [:create, :update]
+
+  private
+  def redirect_cancel
+    redirect_to redirect_back_or_to:root_path if params[:cancel]
+  end
 end

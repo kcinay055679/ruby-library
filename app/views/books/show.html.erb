@@ -4,12 +4,12 @@
 
 <br>
 <h3>Author</h3>
-<%= @book.author.first_name %> <%= @book.author.last_name  %>
+<%= link_to "#{@book.author.first_name} #{@book.author.last_name}", root_path %>
 
 <h3>Options</h3>
 <ul>
   <li><%= link_to "Edit", edit_book_path(@book) %></li>
-  <li><%= link_to "Destroy", book_path(@book), data: {
+  <li><%= link_to "Delete", book_path(@book), data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
   } %></li>

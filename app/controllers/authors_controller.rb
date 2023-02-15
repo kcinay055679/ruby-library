@@ -46,4 +46,11 @@ class AuthorsController < ApplicationController
   def author_params
     params.require(:author).permit(:first_name, :last_name)
   end
+
+  before_action :redirect_cancel, only: [:create, :update]
+
+  private
+  def redirect_cancel
+    redirect_to redirect_back_or_to:root_path if params[:cancel]
+  end
 end
